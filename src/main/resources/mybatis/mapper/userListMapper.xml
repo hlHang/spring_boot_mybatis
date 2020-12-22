@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hlh.springboot.mapper.userListMapper">
+ <!--
+    public userList getUserById(Integer id);
+
+    public void insertUser(userList userList); -->
+    <select id="getUserById" resultType="com.hlh.springboot.entity.userList">
+        SELECT * FROM user_list WHERE userId=#{userId}
+    </select>
+
+    <insert id="insertUser">
+        insert into user_list(userName) values(#{userName})
+    </insert>
+</mapper>
